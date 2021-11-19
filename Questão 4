@@ -1,0 +1,42 @@
+#include <stdio.h>
+void Org(int x[], int e)
+{
+register int i,p;
+register int aux;
+for(i=1;i<e;i++)
+{
+for(p=e-1;p>=i;p--)
+{
+if(x[p-1] > x[p])
+{
+aux = x[p-1];
+x[p-1] = x[p];
+x[p] = aux;
+}
+}
+   }
+   return;
+}
+
+int main()
+{
+int it;
+int valor;
+int vetor[valor];
+int contador;
+
+printf ("Qual a quantidade de numeros a serem ordenados?\n");
+    scanf("%d", &valor);
+printf ("Adicione os numeros:\n");
+for (it = 0; it < valor; it++)
+{
+   scanf("%d", &vetor[it] );
+}
+Org(vetor, valor);
+printf("Ordem crescente dos numeros:");
+for(contador = 0; contador < valor; contador++)
+{
+printf(" %d ", vetor[contador] );
+}
+return 0;
+}
